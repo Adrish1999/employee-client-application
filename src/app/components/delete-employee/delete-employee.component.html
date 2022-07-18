@@ -36,13 +36,15 @@
         </tbody>
     </table>
 
-    <button class="btn btn-danger center" (click)="deleteEmployee()">Delete Employee</button>
-
-    <div class="container" *ngIf="deleteResponse">
-        <h3 class="text-info">{{deleteResponse}}</h3>
+    <div class="text-center">
+        <button class="btn btn-danger" (click)="deleteEmployee()">Delete Employee</button>
     </div>
 </div>
 
 <div class="container" *ngIf="errorResponse">
-    <h3 class="text-danger">{{errorResponse}}</h3>
+    <h3 class="text-danger text-center">{{errorResponse}}</h3>
+</div>
+
+<div class="container" *ngIf="deleteResponse">
+    <h3 class="text-info text-center">{{deleteResponse}}</h3>
 </div>
