@@ -1,0 +1,48 @@
+<div class="container my-4">
+    <form class="form-inline" [formGroup]="employeeSearchForm" (ngSubmit)="onSearch()">
+        <b class="my-1 mr-2">Employee Id</b>
+        <input type="number" class="form-control mb-2 mr-sm-2" formControlName="id">
+        <input type="submit" value="Search" class="btn btn-primary mb-2">
+    </form>
+    <div class="alert alert-danger" *ngIf="employeeSearchForm.controls['id'].hasError('required')">
+        Employee Id cannot be empty
+    </div>
+</div>
+
+<div class="container" *ngIf="employee">
+    <h1 align="center">Employee Details</h1>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Designation</th>
+                <th scope="col">Date Of Birth</th>
+                <th scope="col">Manager Id</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Department Id</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">{{employee.empId}}</th>
+                <td>{{employee.name}}</td>
+                <td>{{employee.designation}}</td>
+                <td>{{employee.dateOfBirth | date:'dd-MMM-yyyy'}}</td>
+                <td>{{employee.managerId}}</td>
+                <td>{{employee.salary | currency:'INR'}}</td>
+                <td>{{employee.deptId}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="btn btn-danger center" (click)="deleteEmployee()">Delete Employee</button>
+
+    <div class="container" *ngIf="deleteResponse">
+        <h3 class="text-info">{{deleteResponse}}</h3>
+    </div>
+</div>
+
+<div class="container" *ngIf="errorResponse">
+    <h3 class="text-danger">{{errorResponse}}</h3>
+</div>
