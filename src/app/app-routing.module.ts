@@ -4,13 +4,23 @@ import { AddEmployeeComponent } from './components/add-employee/add-employee.com
 import { DeleteEmployeeComponent } from './components/delete-employee/delete-employee.component';
 import { FetchAllEmployeesComponent } from './components/fetch-all-employees/fetch-all-employees.component';
 import { FetchEmployeeByIdComponent } from './components/fetch-employee-by-id/fetch-employee-by-id.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
 import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '',
+    redirectTo: 'login',
     pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'home',
+    component: HomeComponent
   },
   {
     path: 'addEmployee',

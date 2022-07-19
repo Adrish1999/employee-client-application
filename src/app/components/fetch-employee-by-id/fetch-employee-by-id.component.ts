@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { DataSharingService } from 'src/app/services/data-sharing.service';
 import { EmployeeService } from 'src/app/services/employee.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class FetchEmployeeByIdComponent implements OnInit {
   public employeeSearchForm!: FormGroup;
   public employee: any;
   public errorResponse!: string;
-  constructor(private _service: EmployeeService) { }
+  constructor(private _service: EmployeeService, private dataSharingService: DataSharingService) { }
 
   ngOnInit(): void {
     this.employeeSearchForm = new FormGroup({

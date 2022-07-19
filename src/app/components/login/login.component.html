@@ -1,0 +1,16 @@
+<h1 class="text-center">Login Form</h1>
+<div class="container border rounded p-5" style="max-width: 480px;">
+    <form [formGroup]="loginForm" (ngSubmit)="doLogin()">
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Username" formControlName="username">
+        </div>
+
+        <div class="mb-3">
+            <input type="password" class="form-control" placeholder="Password" formControlName="password">
+        </div>
+
+        <div class="text-center">
+            <input type="submit" value="Login" class="btn btn-info btn-lg rounded text-white">
+        </div>
+    </form>
+</div>

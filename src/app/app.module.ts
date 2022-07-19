@@ -11,6 +11,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FetchEmployeeByIdComponent } from './components/fetch-employee-by-id/fetch-employee-by-id.component';
 import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component';
 import { DeleteEmployeeComponent } from './components/delete-employee/delete-employee.component';
+import { LoginComponent } from './components/login/login.component';
+import { LoginService } from './services/login.service';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,9 @@ import { DeleteEmployeeComponent } from './components/delete-employee/delete-emp
     AddEmployeeComponent,
     FetchEmployeeByIdComponent,
     UpdateEmployeeComponent,
-    DeleteEmployeeComponent
+    DeleteEmployeeComponent,
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +32,7 @@ import { DeleteEmployeeComponent } from './components/delete-employee/delete-emp
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [EmployeeService],
+  providers: [EmployeeService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
