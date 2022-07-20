@@ -1,0 +1,9 @@
+<div class="container text-center my-3" *ngIf="!message">
+    <h1>You are logged in as {{credentials.username}}</h1>
+    <button class="btn btn-info" (click)="doLogout()">Logout</button>
+</div>
+
+<div class="container text-center my-3" *ngIf="message">
+    <h1 class="text-success">Logout Successful</h1>
+    <a [routerLink]="'/login'">Login Again ?</a>
+</div>

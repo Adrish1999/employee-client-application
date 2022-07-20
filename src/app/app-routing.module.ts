@@ -6,6 +6,7 @@ import { FetchAllEmployeesComponent } from './components/fetch-all-employees/fet
 import { FetchEmployeeByIdComponent } from './components/fetch-employee-by-id/fetch-employee-by-id.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { LogoutComponent } from './components/logout/logout.component';
 import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component';
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent
   },
   {
     path: 'home',

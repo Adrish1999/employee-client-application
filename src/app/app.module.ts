@@ -14,6 +14,8 @@ import { DeleteEmployeeComponent } from './components/delete-employee/delete-emp
 import { LoginComponent } from './components/login/login.component';
 import { LoginService } from './services/login.service';
 import { HomeComponent } from './components/home/home.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { LogoutService } from './services/logout.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { HomeComponent } from './components/home/home.component';
     UpdateEmployeeComponent,
     DeleteEmployeeComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,7 @@ import { HomeComponent } from './components/home/home.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [EmployeeService, LoginService],
+  providers: [EmployeeService, LoginService, LogoutService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
